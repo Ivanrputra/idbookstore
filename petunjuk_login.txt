@@ -1,0 +1,8 @@
+Login User
+- test@test.com
+Login Author
+- author@mail.com
+Login Admin
+- admin@admin.com
+
+pass: 123456
