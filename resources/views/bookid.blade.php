@@ -9,7 +9,7 @@
                     <div class="columns">
                         <div class="column is-3">
                             <figure class="image is-3by4">
-                                <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                                <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                     alt="pic-{{$book->id}}">
                             </figure>
                             <br>
@@ -40,7 +40,7 @@
                                 <br>
                                 <span class=" subtitle is-7">{{ date('d M Y', strtotime($book->created_at)) }}</span>
                             </h2>
-                            @if (count($user) > 0)
+                            @if (!empty($user))
                                 <a class="button is-info is-pulled-right" href="{{ url('/')}}/book_view/?book={{ $book->id_author.'/'.$book->id.'/'.$book->nameFile }}.epub'">
                                     <span class="icon">
                                         <i class="fab fa-readme"></i>
@@ -198,7 +198,7 @@
                 <figure class="media-left">
                     <a href="#">
                         <p class="image is-128x128 is-3by4">
-                           <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                           <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                     alt="pic-{{$book->id}}">
                         </p>
                     </a>
@@ -249,7 +249,7 @@
                 <figure class="media-left">
                     <a href="#">
                         <p class="image is-128x128 is-3by4">
-                            <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                            <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                 alt="pic{{$book->id}}">
                         </p>
                     </a>

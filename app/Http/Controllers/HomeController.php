@@ -38,16 +38,8 @@ class HomeController extends Controller
                 ->paginate(12);
             return view('home', ['books' => $books, 'q'=> $q, 'cate'=>null ]);
 
-            // $books = book::with('author')
-            //     ->where("authors.name", "LIKE","%$q%")
-            //     ->orWhere("books.judul", "LIKE", "%$q%")
-            //     ->orWhere("books.deskripsi", "LIKE", "%$q%")
-            //     ->paginate(8);
-            // return view('home', ['books' => $books, 'q'=> $q]);
         }
-        // $books = DB::table('books')
-        //         ->join('authors', 'books.id_author', '=', 'authors.id')
-        //         ->paginate(8);
+        
         $books = book::with('author')
                 ->where("books.status","=","sudah")
                 ->inRandomOrder()
@@ -65,10 +57,10 @@ class HomeController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->limit(10)
                 ->get();
+
+        //dd($new);
         
         return view('home', ['books' => $books, 'q'=> null,'cate'=>null,'bests'=>$best,'news'=>$new ]);
-        // $books = book::with('author')->paginate(8);
-        // return view('home', ['books' => $books, 'q'=> null]);
     }
     public function mylibrary()
     {   
@@ -108,6 +100,8 @@ class HomeController extends Controller
                 ->inRandomOrder()
                 ->limit(3)
                 ->get();
+
+            //dd($iduser);
             
             return view('bookid', ['book' => $book , 'simil' => $sim, 'user'=> $iduser ]);
         }
@@ -125,6 +119,8 @@ class HomeController extends Controller
             ->inRandomOrder()
             ->limit(3)
             ->get();
+
+        //dd($cekbeli);
         
         return view('bookid', ['book' => $book , 'simil' => $sim, 'user'=>$cekbeli ]);
     }

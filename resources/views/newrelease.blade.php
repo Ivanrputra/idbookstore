@@ -6,11 +6,11 @@
                     <div class="card">
                         <div class="card-image">
                         <span class="ribbon icon has-text-white ">
-                            <i class="fab fa-android fa-2x"></i>
+                            <i class="fab fa-android"></i>
                         </span>
                         <a href="/book/{{$book->id}}" title="{{$book->judul}}">
                             <figure class="image is-3by4">
-                                <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                                <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                     alt="pic-{{$book->id}}">
                             </figure>
                             </a>

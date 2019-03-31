@@ -24,11 +24,11 @@
                     <div class="card">
                         <div class="card-image">
                         <span class="ribbon icon has-text-white ">
-                            <i class="fab fa-android fa-2x"></i>
+                            <i class="fab fa-android"></i>
                         </span>
                         <a href="/book/{{$book->id}}" title="{{$book->judul}}">
                             <figure class="image is-3by4">
-                                <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                                <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                     alt="pic-{{$book->id}}">
                             </figure>
                             </a>
@@ -100,11 +100,11 @@
                 <div class="card">
                     <div class="card-image">
                     <span class="ribbon icon has-text-white ">
-                        <i class="fab fa-android fa-2x"></i>
+                        <i class="fab fa-android"></i>
                     </span>
                     <a href="/book/{{$book->id}}" title="{{$book->judul}}">
                         <figure class="image is-3by4">
-                            <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                            <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                 alt="pic-{{$book->id}}">
                         </figure>
                         </a>
@@ -174,11 +174,11 @@
                 <div class="card">
                     <div class="card-image">
                     <span class="ribbon icon has-text-white ">
-                        <i class="fab fa-android fa-2x"></i>
+                        <i class="fab fa-android"></i>
                     </span>
                     <a href="/book/{{$book->id}}" title="{{$book->judul}}">
                         <figure class="image is-3by4">
-                            <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                            <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                 alt="pic-{{$book->id}}">
                         </figure>
                         </a>
@@ -187,11 +187,7 @@
                         <div class="media">
                             <div class="media-content">
                                 <p class="title is-6 is-size-7-mobile">{{ str_limit($book->judul, 12) }}</p>
-                                <p class="subtitle is-6 is-size-7-mobile">
-                                    <a href="{{ url('/')}}/profil/{{$book->id_author}}" class="has-text-grey">
-                                        <!--@if ($q == null && $q == '') {{ $book->author->name}} @else {{ $book->name}} @endif-->
-                                    </a>
-                                </p>
+                                
                             </div>
                         </div>
 
@@ -256,11 +252,11 @@
                         <div class="card">
                             <div class="card-image">
                             <span class="ribbon icon has-text-white ">
-                                <i class="fab fa-android fa-2x"></i>
+                                <i class="fab fa-android"></i>
                             </span>
                             <a href="/book/{{$book->id}}" title="{{$book->judul}}">
                                 <figure class="image is-3by4">
-                                    <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                                    <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                         alt="pic-{{$book->id}}">
                                 </figure>
                                 </a>
@@ -325,7 +321,7 @@
                     <figure class="media-left">
                         <a href="#">
                             <p class="image is-128x128 is-3by4">
-                                <img src="{{ asset('storage/public/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
+                                <img src="{{ asset('storage/book/penulis/'.$book->id_author.'/'.$book->id.'/'.$book->nameFile.'.jpg') }}"
                                     alt="pic{{$book->id}}">
                             </p>
                         </a>
@@ -333,11 +329,7 @@
                     <div class="media-content" style="padding-top:10px">
                         <div class="content">
                             <p class="title is-size-5-touch">{{$book->judul}}</p>
-                            <p class="subtitle is-size-6-touch">
-                                <a href="{{ url('/')}}/profil/{{$book->id_author}}" class="has-text-grey">
-                                    @if ($q == null && $q == '') {{ $book->author->name}} @else {{ $book->name}} @endif
-                                </a>
-                            </p>
+                            
                             <br class="is-hidden-touch">
                             <p class="title is-size-2 is-size-4-touch has-text-info">
                                 IDR {{$book->harga}}
