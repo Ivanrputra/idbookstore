@@ -37,6 +37,7 @@ class ListDocsController extends Controller
         //     $judul = $a->judul;
         // }
         $judulk = explode(".",$judul[0]->judul)[0];
+
         // return $status;
     //   return view('author.forum', ['chat' => $chat,'id_book' => $id]);
         return view('admin.stat_naskah', ['status' => $status,'naskah' => $judulk,'id_author'=>$judul[0]->id_author]);    

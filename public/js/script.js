@@ -6,13 +6,46 @@
         nav.classList.toggle('is-active');
     });
 
-$('.withslick').slick({
+const sliders = {
+    1: {slider: '#slick-1', loading: '#load-slick-1'},
+    2: {slider: '#slick-2', loading: '#load-slick-2'},
+    3: {slider: '#slick-3', loading: '#load-slick-3'}
+}
+
+
+
+$.each(sliders, function() {
     
-    slidesToShow: 6,
-    infinite: true,
-    prevArrow: '<a class="slick-prev button slick-btn is-hidden-mobile"><span class="icon is-small"><i class="fas fa-caret-left fa-2x"></i></span></a>',
-    nextArrow: '<a class="slick-next button slick-btn is-hidden-mobile"><span class="icon is-small"><i class="fas fa-caret-right fa-2x"></i></span></a>',
-});
+    $(this.slider).slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        responsive: [
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+            }
+            },
+            {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+            }
+            
+        ]
+    });
+
+    $(this.slider).delay(1000).css("visibility","visible");
+    $(this.loading).hide();
+})
+
+
 
 $("#btnnewrelease").click(function(){
     showAllNewRelease();

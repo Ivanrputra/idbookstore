@@ -10,7 +10,7 @@ Bibi.Preset = {
 // -------------------------------------------------------------------------------------------------
 
 // iki gawe online "bookshelf"                  : "storage/public/book/penulis/", // relative path from bib/i/index.html (if the origin is included in "trustworthy-origins", URI begins with "http://" or "https://" for COR-allowed server is OK).
-"bookshelf"                  : "http://localhost:8000/storage/public/book/penulis/", // relative path from bib/i/index.html (if the origin is included in "trustworthy-origins", URI begins with "http://" or "https://" for COR-allowed server is OK).
+"bookshelf"                  : "http://localhost:8000/storage/book/penulis/", // relative path from bib/i/index.html (if the origin is included in "trustworthy-origins", URI begins with "http://" or "https://" for COR-allowed server is OK).
 
 "reader-view-mode"           : "horizontal", // "paged" or "vertical" or "horizontal" ("paged" is for flipping, "vertical" and "horizontal" are for scrolling)
 "fix-reader-view-mode"       : "yes", // "yes" or "no" or "desktop" or "mobile"

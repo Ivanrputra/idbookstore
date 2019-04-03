@@ -64,7 +64,7 @@
                             <i class="fa fa-book"></i>
                         </h1>
                         <h4 class="text-white">Interactive Digital Book and Store</h4>
-                        <a href="#description" class="smooth primary-btn banner-btn">Explore Us</a>
+                        <a href="#features" class="smooth primary-btn banner-btn">Explore Us</a>
                     </div>
                 </div>
             </div>

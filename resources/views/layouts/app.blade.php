@@ -10,24 +10,24 @@
     <title>{{ config('app.name', 'Idbookstore - Interactive Digital Book') }}</title>
     <link rel="shortcut icon" href="{{URL::asset('img/IDBOOK_ico2.ico')}}" >
     <link rel="stylesheet" href="{{ URL::asset('css/bulma.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/slick/slick.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/slick/slick-theme.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/sweetalert.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('fontawesome/css/all.min.css') }}">
 
     <style type="text/css">
-        .withslick>div {
-            width: 1050px;
-        }
-
-        .slick-btn {
-            height: 375px;
-            border: 0px;
+        
+        .withslickcolumn {
+            width: 200px;
+            padding: 2px;
+            
         }
 
         .afterheader {
             margin-top: 50px;
         }
+
         .ribbon {
             z-index: 10; 
             position: absolute;
@@ -39,15 +39,6 @@
         @media only screen and (max-width: 768px) {
             .afterheader {
                 margin-top: 25px;
-            }
-            .withslick {
-                padding: 10px
-            }
-            .withslick>div {
-                width: 800px;
-            }
-            .withslickcolumn {
-                padding: 3px
             }
             .ribbon {
                 z-index: 10; 
@@ -96,24 +87,6 @@
 
         <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
-                        <!--
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link" href="#">
-                                Choose
-                            </a>
-                            <div class="navbar-dropdown is-boxed">
-                                <a class="navbar-item" href="#">
-                                    Newer
-                                </a>
-                                <a class="navbar-item" href="#">
-                                    Recommended
-                                </a>
-                                <a class="navbar-item" href="#">
-                                    Popular
-                                </a>
-                            </div>
-                        </div>
-                    -->
                         <a class="navbar-item is-active" href="{{ url('/home') }}">
                             Home
                         </a>
@@ -208,7 +181,7 @@
                 </ul>
             </aside>
         </div>
-        <div class="column">
+        <div class="column is-10">
             @yield('content')
         </div>
     </div>
@@ -227,10 +200,11 @@
     
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/slick.min.js') }}"></script>
+    <script src="{{ URL::asset('js/script.js') }}"></script>
     <script src="{{ URL::asset('fontawesome/js/fontawesome.min.js') }}"></script>
     <script src="{{ URL::asset('fontawesome/js/all.min.js') }}"></script>
     
-    <script src="{{ URL::asset('js/script.js') }}"></script>
+    
     <script src="{{ URL::asset('js/sweetalert.min.js') }}"></script>
     <!-- Include this after the sweet alert js file -->
     @include('sweet::alert')

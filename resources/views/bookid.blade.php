@@ -40,7 +40,7 @@
                                 <br>
                                 <span class=" subtitle is-7">{{ date('d M Y', strtotime($book->created_at)) }}</span>
                             </h2>
-                            @if (!empty($user))
+                            @if (!is_null($user) && count($cekbeli) > 0)
                                 <a class="button is-info is-pulled-right" href="{{ url('/')}}/book_view/?book={{ $book->id_author.'/'.$book->id.'/'.$book->nameFile }}.epub'">
                                     <span class="icon">
                                         <i class="fab fa-readme"></i>

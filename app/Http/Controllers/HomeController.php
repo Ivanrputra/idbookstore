@@ -91,6 +91,7 @@ class HomeController extends Controller
     {
         // return book::find($id);
         $iduser = Auth::id();
+        
         if ($iduser == null) {
             $book = book::find($id);
         
@@ -120,9 +121,20 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
 
-        //dd($cekbeli);
         
-        return view('bookid', ['book' => $book , 'simil' => $sim, 'user'=>$cekbeli ]);
+        if (is_null($iduser)){
+            echo 'belum login';
+        }else{
+            echo 'sudah login';
+        }
+        echo '<br>';
+        if (count($cekbeli) > 0){
+            echo 'sudah beli';
+        }else{
+            echo 'belum beli';
+        }
+        
+        return view('bookid', ['book' => $book , 'simil' => $sim, 'user'=>$iduser,'cekbeli'=>$cekbeli ]);
     }
     public function kategorishow($kategori)
     {

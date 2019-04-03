@@ -18,9 +18,15 @@
         <br class="is-hidden-mobile">
         <div id="newreleaseall"></div>
         <div id="newreleaseslide">
-            <div class="columns withslick is-variable is-1">
+            <a class="button" id="load-slick-1">
+                <span class="icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </span>
+                <span>Loading...</span>
+            </a>
+            <div class="slick-frame" id="slick-1" style="visibility: hidden;">
                 @forelse ($news as $book)
-                <div class="column is-2 withslickcolumn">
+                <div class="withslickcolumn">
                     <div class="card">
                         <div class="card-image">
                         <span class="ribbon icon has-text-white ">
@@ -94,9 +100,15 @@
             <span class="is-clearfix"></span>
         </div>
         <br class="is-hidden-mobile">
-        <div class="columns withslick is-variable is-1">
+        <a class="button" id="load-slick-2">
+                <span class="icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </span>
+                <span>Loading...</span>
+            </a>
+        <div class="slick-frame" id="slick-2" style="visibility: hidden;">
             @forelse ($bests as $book)
-            <div class="column is-2 withslickcolumn">
+            <div class="withslickcolumn">
                 <div class="card">
                     <div class="card-image">
                     <span class="ribbon icon has-text-white ">
@@ -168,9 +180,15 @@
             <span class="is-clearfix"></span>
         </div>
         <br class="is-hidden-mobile">
-        <div class="columns withslick is-variable is-1">
+        <a class="button" id="load-slick-3">
+                <span class="icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </span>
+                <span>Loading...</span>
+            </a>
+        <div class="slick-frame" id="slick-3" style="visibility: hidden;">
             @forelse ($books as $book)
-            <div class="column is-2 withslickcolumn">
+            <div class="withslickcolumn">
                 <div class="card">
                     <div class="card-image">
                     <span class="ribbon icon has-text-white ">

@@ -1,4 +1,4 @@
-@extends('author.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content') 
 <!-- BREADCRUMB -->
@@ -39,7 +39,7 @@
                                 </td>
                                 <td>{{$b->message}}</td>
                                 <td>
-                                <a class="button is-info is-fullwidth" href="{{ asset('storage/public/book/penulis/'.$id_author.'/doc/'.$b->id_naskah.'/'.$b->title_naskah) }}" >Download</a>
+                                <a class="button is-info is-fullwidth" href="{{ asset('storage/book/penulis/'.$id_author.'/doc/'.$b->id_naskah.'/'.$b->title_naskah) }}" >Download</a>
                                 </td>
                         @endforeach
                 </tbody>
