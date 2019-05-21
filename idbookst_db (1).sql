@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
--- https://www.phpmyadmin.net/
+-- version 4.2.11
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Feb 24, 2019 at 02:28 AM
--- Server version: 5.7.19
--- PHP Version: 7.1.19
+-- Host: 127.0.0.1
+-- Generation Time: Mar 17, 2019 at 09:00 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `idbookst_db`
@@ -28,22 +26,22 @@ SET time_zone = "+00:00";
 -- Table structure for table `admins`
 --
 
-CREATE TABLE `admins` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `admins` (
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '$2y$10$A81QV51v1KYy.51uphPdNuD0E.H91BjEZJ1yHaOxQvtdY7lNlwKsW', 'VrgJ4wTVyGMj1w6Y5e7eewshlC0IGUURoeJBoHeSGmH0NyZ1QtaoVBiF3fZw', '2018-01-20 03:32:36', '2018-01-20 03:32:36');
+(1, 'Admin', 'admin@admin.com', '$2y$10$A81QV51v1KYy.51uphPdNuD0E.H91BjEZJ1yHaOxQvtdY7lNlwKsW', 'ZVlcqPJxkuiOvKEu8DWYRPw7aGwf0reIQMQQQwKh3LIQQ2HiWtNt4TdouCYe', '2018-01-20 03:32:36', '2018-01-20 03:32:36');
 
 -- --------------------------------------------------------
 
@@ -51,22 +49,22 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `crea
 -- Table structure for table `authors`
 --
 
-CREATE TABLE `authors` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `authors` (
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `authors`
 --
 
 INSERT INTO `authors` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(14, 'Author', 'author@mail.com', '$2y$10$SEyY80sVRyDv4BcG/c/mi.V4QprGRXFNJ/je95Ay7UFIic1QzVXp.', 'cTyic5kmcFJBEJ4A4XyAhBbOLoaAA7RvznLp0HjS2IaMzFjHYynoRxQ8aYM6', '2018-11-12 09:35:08', '2018-11-12 09:35:08'),
+(14, 'Author', 'author@mail.com', '$2y$10$SEyY80sVRyDv4BcG/c/mi.V4QprGRXFNJ/je95Ay7UFIic1QzVXp.', 'O0hiqKy7kHXnKegEiOHSxbDGRelO8vO3Fyt5qwvkeZ6Rfj2yEAyyfjZYyUVX', '2018-11-12 09:35:08', '2018-11-12 09:35:08'),
 (13, 'John', 'john@mail.com', '$2y$10$H9Ah.7QMeP9fmycPZQtYIewVU/.J0sgh1pEIuvGgmvpl31ooucN/C', 'WDSpos0diEF7Zm8UGev6OOXaRGIUyfvnqZ5EgqOdOoHVQo0yePg5vTIeeOk4', '2018-10-16 11:05:08', '2018-10-16 11:05:08'),
 (3, 'Fandi', 'fandi@mail.com', '$2y$10$t40CIMx7yV8JqfPKhkG75uR0OEKPWIndiJYmlnmBIF/0T/oLQsv8i', '0xqAoDjaJ24POiYLP59L2Wc30N5b7f46HPIgGXGMrFK4oJDzElDbIbzD0EgX', '2018-10-10 00:44:13', '2018-10-10 00:44:13'),
 (4, 'Eko', 'eko@mail.com', '$2y$10$jWu6JEBPwxoVO/C8.xcTau2FQsFyFMsLf8IYIyzz3h0OYUy5Ubvam', 'JKJ8C0SjOGTe9kyVIWhVSfOHjYxC2hzrdzuqAvXzmv97JevWN83vtb4uU3wK', '2018-10-10 00:43:52', '2018-10-10 00:43:52'),
@@ -79,7 +77,7 @@ INSERT INTO `authors` (`id`, `name`, `email`, `password`, `remember_token`, `cre
 -- Table structure for table `best_seller`
 --
 
-CREATE TABLE `best_seller` (
+CREATE TABLE IF NOT EXISTS `best_seller` (
   `id` int(11) NOT NULL,
   `id_book` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -98,8 +96,8 @@ INSERT INTO `best_seller` (`id`, `id_book`) VALUES
 -- Table structure for table `books`
 --
 
-CREATE TABLE `books` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `books` (
+`id` int(11) NOT NULL,
   `id_author` varchar(255) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
@@ -111,7 +109,7 @@ CREATE TABLE `books` (
   `status` enum('sudah','belum') NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `books`
@@ -147,8 +145,8 @@ INSERT INTO `books` (`id`, `id_author`, `judul`, `deskripsi`, `halaman`, `bahasa
 -- Table structure for table `forum`
 --
 
-CREATE TABLE `forum` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `forum` (
+`id` int(11) NOT NULL,
   `id_book` int(11) NOT NULL,
   `id_author` int(11) NOT NULL,
   `id_admin` int(11) NOT NULL,
@@ -156,7 +154,7 @@ CREATE TABLE `forum` (
   `writer` text NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `forum`
@@ -172,7 +170,14 @@ INSERT INTO `forum` (`id`, `id_book`, `id_author`, `id_admin`, `message`, `write
 (25, 53, 0, 1, 'baik, videonya apa sudah ada atau saya buatkan?', 'admin', '2018-10-16 13:12:31', '2018-10-16 13:12:31'),
 (26, 53, 13, 0, 'admin saja yang buatkan, saya belum menyiapkan video sebelumnya. Terima kasih banyak admin', 'author', '2018-10-16 13:13:12', '2018-10-16 13:13:12'),
 (27, 53, 0, 1, 'Ok, saya akan kerjakan dulu, saya beritahu finalisasi bukunya lewat email sebelum kami publish', 'admin', '2018-10-16 13:14:07', '2018-10-16 13:14:07'),
-(28, 53, 13, 0, 'Oke min.. :)', 'author', '2018-10-16 13:14:24', '2018-10-16 13:14:24');
+(28, 53, 13, 0, 'Oke min.. :)', 'author', '2018-10-16 13:14:24', '2018-10-16 13:14:24'),
+(29, 51, 0, 1, 'hai', 'admin', '2019-03-07 11:32:08', '2019-03-07 11:32:08'),
+(30, 51, 0, 1, 'hai', 'admin', '2019-03-07 11:32:16', '2019-03-07 11:32:16'),
+(31, 51, 0, 1, 'hai', 'admin', '2019-03-07 11:32:21', '2019-03-07 11:32:21'),
+(32, 51, 0, 1, 'hai', 'admin', '2019-03-07 11:32:25', '2019-03-07 11:32:25'),
+(33, 37, 0, 1, 'hai', 'admin', '2019-03-07 11:33:18', '2019-03-07 11:33:18'),
+(34, 37, 0, 1, 'hai', 'admin', '2019-03-07 11:33:19', '2019-03-07 11:33:19'),
+(35, 37, 0, 1, 'hai', 'admin', '2019-03-07 11:33:25', '2019-03-07 11:33:25');
 
 -- --------------------------------------------------------
 
@@ -180,7 +185,7 @@ INSERT INTO `forum` (`id`, `id_book`, `id_author`, `id_admin`, `message`, `write
 -- Table structure for table `kategori`
 --
 
-CREATE TABLE `kategori` (
+CREATE TABLE IF NOT EXISTS `kategori` (
   `book_id` int(11) NOT NULL,
   `kategori` text NOT NULL,
   `created_at` datetime NOT NULL,
@@ -205,8 +210,8 @@ INSERT INTO `kategori` (`book_id`, `kategori`, `created_at`, `updated_at`) VALUE
 -- Table structure for table `migrations`
 --
 
-CREATE TABLE `migrations` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `migrations` (
+`id` int(11) NOT NULL,
   `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -214,10 +219,32 @@ CREATE TABLE `migrations` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `naskah`
+--
+
+CREATE TABLE IF NOT EXISTS `naskah` (
+`id` int(11) NOT NULL,
+  `id_author` int(11) NOT NULL,
+  `judul` text NOT NULL,
+  `status` text NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `naskah`
+--
+
+INSERT INTO `naskah` (`id`, `id_author`, `judul`, `status`, `created_at`, `updated_at`) VALUES
+(3, 14, 'naskah.epub', 'belum', '2019-03-09', '2019-03-09');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `password_resets`
 --
 
-CREATE TABLE `password_resets` (
+CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL
@@ -237,8 +264,8 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 -- Table structure for table `pembelian`
 --
 
-CREATE TABLE `pembelian` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pembelian` (
+`id` int(11) NOT NULL,
   `id_buku` varchar(255) NOT NULL,
   `id_pembeli` varchar(255) NOT NULL,
   `harga` varchar(255) NOT NULL,
@@ -247,7 +274,7 @@ CREATE TABLE `pembelian` (
   `id_author` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pembelian`
@@ -273,18 +300,44 @@ INSERT INTO `pembelian` (`id`, `id_buku`, `id_pembeli`, `harga`, `status_pembaya
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `stat_naskah`
+--
+
+CREATE TABLE IF NOT EXISTS `stat_naskah` (
+`id` int(11) NOT NULL,
+  `id_naskah` int(11) NOT NULL,
+  `id_author` int(11) NOT NULL,
+  `id_admin` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `title_naskah` text NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stat_naskah`
+--
+
+INSERT INTO `stat_naskah` (`id`, `id_naskah`, `id_author`, `id_admin`, `message`, `title_naskah`, `created_at`, `updated_at`) VALUES
+(4, 3, 14, 0, 'desk1\r\n', 'naskah.epub', '2019-03-09', '2019-03-09'),
+(5, 3, 14, 0, 'tambah1', 'naskah0.epub', '2019-03-10', '2019-03-10'),
+(6, 3, 0, 1, 'admin1', 'naskah00.epub', '2019-03-11', '2019-03-11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `template`
 --
 
-CREATE TABLE `template` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `template` (
+`id` int(11) NOT NULL,
   `id_admin` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `nama_file` varchar(255) NOT NULL,
   `template` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `template`
@@ -304,15 +357,15 @@ INSERT INTO `template` (`id`, `id_admin`, `nama`, `nama_file`, `template`, `crea
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -320,7 +373,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Fathul Kirom', 'kirom222@gmail.com', '$2y$10$iMC5IlttjG.AgRw.WRqNPOl9vmoK8pOwW9sChen2hK2wf8jBcoB7q', '6eOhW6VU22BsawcIxYgr5jIbeAl3GpRCHOvuDpgngaqV1GgDE8SaEcqsSGGH', '2018-01-20 03:30:47', '2018-01-20 03:30:47'),
-(2, 'Ivanrputra', 'ivanrputra@gmail.com', '$2y$10$C3i4ZsDzfqQrfKpu9.ipFOFiy/KQAxjdaYa0IkBSrTruYYbPZ/9eO', '0YRk0XNSqXyKkAf0e6FQ1OvIfnNyhvxlOq59opVyYbdqnBUYfPcQySLO20Bp', '2018-01-20 03:35:16', '2018-01-20 03:35:16'),
+(2, 'Ivanrputra', 'ivanrputra@gmail.com', '$2y$10$C3i4ZsDzfqQrfKpu9.ipFOFiy/KQAxjdaYa0IkBSrTruYYbPZ/9eO', 'qICbdbvy01lQO8k3YdxbrHGD7Zzyy0hLo3yroTWyxyDrohq8Zd8Q9P7uhg8a', '2018-01-20 03:35:16', '2018-01-20 03:35:16'),
 (3, 'Test', 'test@test.com', '$2y$10$VXQHYjX/JbtdqOBWa6OseOj3kLbloHiwz6kFtQbMT/LRZoVVMx5Ry', '11E1h7yezvMR1DjG4AT9aHrmqa3TElTEfVYQBj6TT85rqGiH788MkbXV82mM', '2018-01-20 10:54:09', '2018-01-20 10:54:09'),
 (4, 'Fandi Arfa', 'arfabuma.987@gmail.com', '$2y$10$L87a1El9J2OUyfXysrW.l.S9LmauG4J/iDTWR7URPzXx7rVgMYApS', 'qzw831RPOud0RBtaAJSHhCNZeJQ4QC5VEpGDYcMl81777Ly7E8B4J6heTcpi', '2018-06-06 06:10:00', '2018-06-06 06:10:00'),
 (5, 'SEOViemi', 'miekisimpna2013@seocdvig.ru', '$2y$10$1exdjwxkRyp2FYBBuXUtpu2u9/VJ5ThXg2MxPa0kzUrIFHtjUVhP6', NULL, '2018-06-18 20:40:21', '2018-06-18 20:40:21'),
@@ -339,59 +392,67 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admins_email_unique` (`email`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
 -- Indexes for table `authors`
 --
 ALTER TABLE `authors`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `authors_email_unique` (`email`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `authors_email_unique` (`email`);
 
 --
 -- Indexes for table `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `forum`
 --
 ALTER TABLE `forum`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `naskah`
+--
+ALTER TABLE `naskah`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
-  ADD KEY `password_resets_token_index` (`token`),
-  ADD KEY `password_resets_email_index` (`email`);
+ ADD KEY `password_resets_token_index` (`token`), ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indexes for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stat_naskah`
+--
+ALTER TABLE `stat_naskah`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `template`
 --
 ALTER TABLE `template`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -401,51 +462,52 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `naskah`
+--
+ALTER TABLE `naskah`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
+--
+-- AUTO_INCREMENT for table `stat_naskah`
+--
+ALTER TABLE `stat_naskah`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `template`
 --
 ALTER TABLE `template`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-COMMIT;
-
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
